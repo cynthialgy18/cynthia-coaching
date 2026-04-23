@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git --version)",
+      "Bash(python -c ' *)",
+      "Bash(powershell -Command ' *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where node *)",
+      "Bash(where npx *)",
+      "Bash(where python *)",
+      "Bash(where python3 *)",
+      "Bash(cmd.exe /c \"where node 2>&1 && where npx 2>&1 && where python 2>&1\")",
+      "Bash(cmd.exe /c \"where node & where npx & where python & where python3 & where php & where ruby 2>&1\")",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\maymizu\\\\AppData\\\\Roaming\\\\nvm 2>&1 | head -5\")",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\maymizu\\\\.nvm 2>&1 | head -3\")",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\maymizu\\\\AppData\\\\Local\\\\Programs /b 2>&1\")",
+      "Bash(cmd.exe /c \"dir C:\\\\Program Files /b 2>&1\")",
+      "PowerShell(dotnet tool list -g 2>&1)",
+      "PowerShell(Get-Command git)",
+      "PowerShell(& \"C:\\\\Program Files\\\\Git\\\\usr\\\\bin\\\\python3.exe\" --version 2>&1)",
+      "PowerShell(& \"C:\\\\Program Files\\\\Git\\\\mingw64\\\\bin\\\\python.exe\" --version 2>&1)",
+      "PowerShell(gh --version 2>&1)"
+    ]
+  }
+}

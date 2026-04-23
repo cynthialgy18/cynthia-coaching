@@ -1,0 +1,10 @@
+# Claude internal files
+.claude/settings.local.json
+
+# Local dev server
+serve.ps1
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
