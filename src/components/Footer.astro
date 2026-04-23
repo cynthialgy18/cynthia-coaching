@@ -1,0 +1,45 @@
+---
+import { site } from '../data/site';
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>{site.name}</h3>
+        <p>Helping mid-career adults rediscover purpose and create the life they truly want — one intentional step at a time.</p>
+        <div class="footer-social">
+          <a href={site.instagram} class="social-link" aria-label="Instagram">📸</a>
+          <a href={site.linkedin} class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">💼</a>
+          <a href={site.facebook} class="social-link" aria-label="Facebook">👥</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="/contact">Book a Free Call</a></li>
+          <li><a href="/services">1-on-1 Coaching</a></li>
+          <li><a href="/contact">Contact Me</a></li>
+          <li><a href="/blog">Free Resources</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>{site.copyright}</span>
+      <span>
+        <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="#">Terms of Service</a>
+      </span>
+    </div>
+  </div>
+</footer>

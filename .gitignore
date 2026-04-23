@@ -1,4 +1,11 @@
-# Claude internal files
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Claude internal
 .claude/settings.local.json
 
 # Local dev server

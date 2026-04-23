@@ -1,0 +1,23 @@
+---
+import { site } from '../data/site';
+---
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      {site.name}
+      <span>{site.tagline}</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/testimonials">Testimonials</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li class="nav-cta"><a href="/contact" class="btn btn-primary">Book Free Call</a></li>
+    </ul>
+  </div>
+</nav>

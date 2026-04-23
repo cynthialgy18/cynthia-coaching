@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { site } from '../../data/site';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title={`Blog | ${site.name} — Life Coach`} description="Free articles, tools and insights for mid-career adults navigating change, burnout and purpose.">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Free Resources</p>
+      <h1>Insights for Your Journey</h1>
+      <p>Practical articles, honest reflections, and tools to help you navigate change — completely free.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-grid">
+        {posts.map(post => (
+          <article class="blog-card fade-up">
+            <div class="blog-card-img">
+              <div class="blog-card-img-placeholder" style={`background:${post.data.bgColor || 'var(--bg-card)'}`}>
+                {post.data.emoji}
+              </div>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-tag">{post.data.tag}</span>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              <div class="blog-card-meta">
+                <span>📅 {post.data.date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                <span>⏱ {post.data.readTime}</span>
+              </div>
+              <a href={`/blog/${post.slug}`} class="read-more">Read Article →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section-sm bg-card">
+    <div class="container" style="max-width:620px;text-align:center;">
+      <div class="fade-up">
+        <p class="section-label">Stay Connected</p>
+        <h2>Get New Articles Delivered to Your Inbox</h2>
+        <p style="margin:1rem 0 2rem;">Join readers who get honest, practical insights for navigating life's big transitions — no fluff, no spam.</p>
+        <form style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;" onsubmit="return false;">
+          <input type="email" placeholder="Your email address" style="flex:1;min-width:240px;" aria-label="Email address" />
+          <button type="submit" class="btn btn-primary">Subscribe Free</button>
+        </form>
+        <p style="font-size:.8rem;color:var(--text-light);margin-top:1rem;">Unsubscribe anytime. Your privacy is respected.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <p class="section-label">Go Deeper</p>
+      <h2>Ready to Move Beyond Articles?</h2>
+      <p>Reading is a great start. A conversation can change everything.</p>
+      <div class="cta-btns">
+        <a href="/contact" class="btn btn-white">Book My Free Call</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

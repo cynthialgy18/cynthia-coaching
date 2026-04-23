@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+import { testimonials } from '../data/testimonials';
+
+const featured = testimonials.find(t => t.featured);
+const rest = testimonials.filter(t => !t.featured);
+---
+
+<Layout title={`Testimonials | ${site.name} — Life Coach`} description="Real stories from real clients — hear how life coaching with Cynthia helped mid-career adults transform their lives.">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Client Stories</p>
+      <h1>Real People. Real Change.</h1>
+      <p>These aren't highlight reels — they're honest accounts of what it looks like to do the work and come out the other side.</p>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="trust-item-icon">⭐</span><div><strong>5.0</strong><span>Average Rating</span></div></div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><span class="trust-item-icon">👥</span><div><strong>200+</strong><span>Clients Served</span></div></div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><span class="trust-item-icon">🌍</span><div><strong>12+</strong><span>Countries</span></div></div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><span class="trust-item-icon">🔁</span><div><strong>94%</strong><span>Return for More</span></div></div>
+    </div>
+  </div>
+
+  <!-- FEATURED -->
+  {featured && (
+    <section class="section">
+      <div class="container">
+        <div style="background:linear-gradient(135deg,#FDF8F3,#F2E9DF);border:1px solid var(--border);border-radius:var(--radius);padding:56px;max-width:860px;margin:0 auto;text-align:center;" class="fade-up">
+          <div style="font-size:3.5rem;color:var(--accent);line-height:.8;margin-bottom:1rem;">"</div>
+          <p style="font-family:'Playfair Display',serif;font-size:1.35rem;line-height:1.7;color:var(--text);font-style:italic;margin-bottom:2rem;">{featured.quote}</p>
+          <div style="display:flex;align-items:center;justify-content:center;gap:14px;">
+            <div class="testimonial-avatar" style="width:56px;height:56px;font-size:1.3rem;">{featured.avatar}</div>
+            <div style="text-align:left;">
+              <strong style="display:block;font-size:1rem;">{featured.name}</strong>
+              <span style="font-size:.85rem;color:var(--text-light);">{featured.role}</span>
+            </div>
+          </div>
+          <div style="color:#F5A623;font-size:1.1rem;letter-spacing:3px;margin-top:1rem;">★★★★★</div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- GRID -->
+  <section class="section-sm bg-card">
+    <div class="container">
+      <div class="section-header center fade-up">
+        <p class="section-label">More Stories</p>
+        <h2>What Clients Say</h2>
+      </div>
+      <div class="testimonials-grid" style="margin-top:3rem;">
+        {rest.map(t => (
+          <div class="testimonial-card fade-up">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">{t.quote}</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">{t.avatar}</div>
+              <div class="testimonial-author-info">
+                <strong>{t.name}</strong>
+                <span>{t.role}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <p class="section-label">Your Story Is Next</p>
+      <h2>What Would Your Testimonial Say?</h2>
+      <p>Book a free discovery call and let's start writing your next chapter together.</p>
+      <div class="cta-btns">
+        <a href="/contact" class="btn btn-white">Book My Free Call</a>
+        <a href="/services" class="btn btn-outline" style="border-color:rgba(255,255,255,.3);color:#fff;">View Services</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+---
+
+<Layout title={`Book a Call | ${site.name} — Life Coach`} description="Book a free 30-minute discovery call with Cynthia or send a message. Let's explore what's possible for you.">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Let's Talk</p>
+      <h1>Book Your Free Discovery Call</h1>
+      <p>A relaxed, 30-minute conversation. No pressure, no pitch — just clarity on what's possible for you.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Info -->
+        <div class="contact-info fade-up">
+          <p class="section-label">What to Expect</p>
+          <h3>Your Free 30-Minute Call</h3>
+          <p>This is a genuine, no-pressure conversation designed to be useful whether we end up working together or not.</p>
+
+          <div style="display:flex;flex-direction:column;gap:14px;margin:1.8rem 0 2rem;">
+            {[
+              { n:"1", title:"Where are you right now?",  desc:"We'll honestly assess your current situation — what's working, what isn't." },
+              { n:"2", title:"What do you really want?",  desc:"We'll get underneath surface goals to what truly matters to you." },
+              { n:"3", title:"Could coaching help?",      desc:"I'll give you an honest view — and only invite you to work together if I genuinely think I can help." },
+            ].map(s => (
+              <div style="display:flex;gap:14px;align-items:flex-start;">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--bg-card);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;color:var(--accent);font-weight:700;flex-shrink:0;">{s.n}</div>
+                <div>
+                  <strong style="display:block;font-size:.95rem;margin-bottom:3px;">{s.title}</strong>
+                  <span style="font-size:.88rem;color:var(--text-light);">{s.desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-method-icon">📧</div>
+              <div><strong>Email</strong><span>{site.email}</span></div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon">💼</div>
+              <div><strong>LinkedIn</strong><a href={site.linkedin} target="_blank" rel="noopener" style="font-size:.83rem;color:var(--accent);">View Profile</a></div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon">🕐</div>
+              <div><strong>Response Time</strong><span>Within 24 hours</span></div>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-card);border-radius:var(--radius);padding:24px;border-left:4px solid var(--accent);">
+            <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--text);margin-bottom:12px;">"I almost didn't book the call because I thought I wasn't 'ready.' Best decision I ever made. Just book it."</p>
+            <span style="font-size:.82rem;color:var(--text-light);">— Coaching Client</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: Booking + Form -->
+        <div class="fade-up">
+          <!-- Calendly placeholder — replace with your embed code -->
+          <div class="calendly-placeholder">
+            <div class="calendly-placeholder-icon">📅</div>
+            <h4>Schedule Your Free Call</h4>
+            <p>Your booking calendar will appear here once you connect Calendly.</p>
+            <p style="font-size:.82rem;margin-top:.5rem;">Recommended: <strong>Calendly</strong> · TidyCal · Acuity</p>
+            <a href="https://calendly.com" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem;">Set Up Calendly Free →</a>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:16px;margin:2rem 0;">
+            <div style="flex:1;height:1px;background:var(--border);"></div>
+            <span style="font-size:.85rem;color:var(--text-light);white-space:nowrap;">or send a message instead</span>
+            <div style="flex:1;height:1px;background:var(--border);"></div>
+          </div>
+
+          <div class="contact-form-card">
+            <h3>Send Me a Message</h3>
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="interest">What are you hoping to work on?</label>
+                <select id="interest" name="interest">
+                  <option value="" disabled selected>Select an area…</option>
+                  <option>Career change or transition</option>
+                  <option>Burnout &amp; energy</option>
+                  <option>Purpose &amp; meaning</option>
+                  <option>Work-life balance</option>
+                  <option>Confidence &amp; self-belief</option>
+                  <option>Relationships</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Tell me a little about where you are right now</label>
+                <textarea id="message" name="message" placeholder="What's brought you here today?" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message →</button>
+              <p style="font-size:.78rem;color:var(--text-light);text-align:center;margin-top:12px;">I read every message and reply within 24 hours.</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
