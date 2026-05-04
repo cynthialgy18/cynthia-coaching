@@ -4,22 +4,23 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:          #FAF6F1;
-  --bg-card:     #F2E9DF;
-  --bg-dark:     #2C1810;
-  --text:        #2C1810;
-  --text-mid:    #5A3E2B;
-  --text-light:  #9B7B62;
-  --accent:      #C17A45;
-  --accent-dark: #9B5E30;
-  --green:       #7A9E87;
-  --green-dark:  #5A7E67;
-  --border:      #E5D5C5;
+  --bg:          #FAF6F0;
+  --bg-card:     #F0E7DB;
+  --bg-dark:     #1A0E06;
+  --text:        #1A0E06;
+  --text-mid:    #4A3020;
+  --text-light:  #8A6A50;
+  --accent:      #C8831A;
+  --accent-dark: #A06210;
+  --accent-glow: rgba(200,131,26,.22);
+  --green:       #2D6A4F;
+  --green-dark:  #1B4332;
+  --border:      #E0D0BC;
   --white:       #FFFFFF;
   --radius:      12px;
   --radius-sm:   8px;
-  --shadow:      0 4px 24px rgba(44,24,16,.08);
-  --shadow-md:   0 8px 40px rgba(44,24,16,.13);
+  --shadow:      0 4px 24px rgba(26,14,6,.09);
+  --shadow-md:   0 8px 40px rgba(26,14,6,.16);
   --transition:  all .25s ease;
   --nav-h:       72px;
 }
@@ -229,7 +230,7 @@ p  { color: var(--text-mid); line-height: 1.8; }
    ============================================================ */
 .hero {
   padding: 96px 0 80px;
-  background: linear-gradient(135deg, var(--bg) 0%, #EFE3D5 100%);
+  background: linear-gradient(150deg, #1A0E06 0%, #2E1810 55%, #3A2010 100%);
   position: relative;
   overflow: hidden;
 }
@@ -239,7 +240,7 @@ p  { color: var(--text-mid); line-height: 1.8; }
   top: -120px; right: -120px;
   width: 500px; height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(193,122,69,.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200,131,26,.18) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero::after {
@@ -248,9 +249,17 @@ p  { color: var(--text-mid); line-height: 1.8; }
   bottom: -80px; left: -80px;
   width: 360px; height: 360px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(122,158,135,.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200,131,26,.08) 0%, transparent 70%);
   pointer-events: none;
 }
+.hero .section-label { color: var(--accent); }
+.hero h1 { color: #FAF6F0; }
+.hero .hero-content > p { color: rgba(250,246,240,.8); }
+.hero .hero-badge { background: rgba(250,246,240,.07); border: 1px solid rgba(250,246,240,.15); }
+.hero .hero-badge-text strong { color: #FAF6F0; }
+.hero .hero-badge-text span { color: rgba(250,246,240,.55); }
+.hero .btn-outline { border-color: rgba(250,246,240,.35); color: #FAF6F0; }
+.hero .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 .hero-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -594,11 +603,51 @@ p  { color: var(--text-mid); line-height: 1.8; }
 }
 
 /* ============================================================
+   HEART SECTION
+   ============================================================ */
+.heart-section {
+  padding: 96px 0;
+  background: linear-gradient(150deg, #1A0E06 0%, #2E1810 55%, #3A2010 100%);
+  position: relative;
+  overflow: hidden;
+}
+.heart-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,131,26,.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.heart-inner { position: relative; z-index: 1; }
+.heart-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin: 2rem 0;
+}
+.heart-body p {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.85;
+  color: rgba(250,246,240,.8);
+  text-align: center;
+}
+.heart-closing {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important;
+  color: var(--accent) !important;
+  font-weight: 600;
+  margin-top: .5rem;
+}
+
+/* ============================================================
    CTA BANNER
    ============================================================ */
 .cta-banner {
-  background: linear-gradient(135deg, #3D1F10 0%, #6B3520 100%);
-  padding: 80px 0;
+  background: linear-gradient(150deg, #1A0E06 0%, #2E1508 45%, #1A0E06 100%);
+  padding: 96px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -607,14 +656,22 @@ p  { color: var(--text-mid); line-height: 1.8; }
   content: '';
   position: absolute;
   top: -100px; right: -100px;
-  width: 400px; height: 400px;
+  width: 500px; height: 500px;
   border-radius: 50%;
-  background: rgba(193,122,69,.15);
+  background: radial-gradient(circle, rgba(200,131,26,.2) 0%, transparent 65%);
   pointer-events: none;
 }
-.cta-banner .section-label { color: rgba(255,255,255,.6); }
+.cta-banner .section-label { color: var(--accent); }
 .cta-banner h2 { color: var(--white); margin-bottom: 1rem; }
-.cta-banner p  { color: rgba(255,255,255,.75); max-width: 500px; margin: 0 auto 2rem; }
+.cta-banner p  { color: rgba(250,246,240,.7); max-width: 520px; margin: 0 auto 2rem; }
+.cta-banner .poem-line {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--accent);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+}
 .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
 /* ============================================================
@@ -655,11 +712,24 @@ p  { color: var(--text-mid); line-height: 1.8; }
    ABOUT PAGE
    ============================================================ */
 .page-hero {
-  background: linear-gradient(135deg, var(--bg) 0%, #EFE3D5 100%);
-  padding: 72px 0 64px;
+  background: linear-gradient(150deg, #1A0E06 0%, #2E1810 55%, #3A2010 100%);
+  padding: 80px 0 72px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
-.page-hero p { max-width: 580px; margin: 1rem auto 0; font-size: 1.1rem; }
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,131,26,.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-hero .section-label { color: var(--accent); }
+.page-hero h1 { color: #FAF6F0; }
+.page-hero p { max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem; color: rgba(250,246,240,.75); }
 
 .about-story {
   display: grid;

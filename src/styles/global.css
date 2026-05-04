@@ -604,6 +604,46 @@ p  { color: var(--text-mid); line-height: 1.8; }
 }
 
 /* ============================================================
+   HEART SECTION
+   ============================================================ */
+.heart-section {
+  padding: 96px 0;
+  background: linear-gradient(150deg, #1A0E06 0%, #2E1810 55%, #3A2010 100%);
+  position: relative;
+  overflow: hidden;
+}
+.heart-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,131,26,.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.heart-inner { position: relative; z-index: 1; }
+.heart-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin: 2rem 0;
+}
+.heart-body p {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.85;
+  color: rgba(250,246,240,.8);
+  text-align: center;
+}
+.heart-closing {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important;
+  color: var(--accent) !important;
+  font-weight: 600;
+  margin-top: .5rem;
+}
+
+/* ============================================================
    CTA BANNER
    ============================================================ */
 .cta-banner {
