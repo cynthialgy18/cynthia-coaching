@@ -204,6 +204,14 @@ p  { color: var(--text-mid); line-height: 1.8; }
 .nav-links a:hover::after,
 .nav-links a.active::after { width: 100%; }
 .nav-cta { margin-left: .5rem; }
+.nav-linkedin {
+  display: flex;
+  align-items: center;
+  color: var(--text-mid);
+  transition: var(--transition);
+  padding: 4px;
+}
+.nav-linkedin:hover { color: #0A66C2; }
 
 .nav-toggle {
   display: none;
@@ -1016,12 +1024,11 @@ textarea { resize: vertical; min-height: 120px; }
   align-items: center;
   justify-content: center;
   font-size: 1rem;
+  color: rgba(255,255,255,.7);
   transition: var(--transition);
 }
-.social-link:hover {
-  background: var(--accent);
-  color: var(--white);
-}
+.social-link:hover { background: var(--accent); color: var(--white); }
+.social-link-linkedin:hover { background: #0A66C2; }
 .footer-col h4 {
   color: var(--white);
   font-size: .85rem;

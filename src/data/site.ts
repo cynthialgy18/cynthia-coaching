@@ -3,7 +3,7 @@
 export const site = {
   name:        "Cynthia",
   tagline:     "Life Coach",
-  description: "Helping mid-career adults in their 30s–50s rediscover purpose, break through burnout, and build a life they love — with clarity and intention.",
+  description: "Feeling stuck or unsure what's next? Cynthia helps you cut through the noise, reconnect to what truly matters, and make meaningful change — in how you see yourself, the relationships that count, and what's core to who you are.",
   email:       "cynthialgy18@gmail.com",
   linkedin:    "https://www.linkedin.com/in/cynthialgy/",
   instagram:   "#",
@@ -15,7 +15,7 @@ export const site = {
 
 export const services = [
   {
-    icon:     "🌱",
+    icon:     "🤝",
     title:    "1-on-1 Coaching Program",
     tagline:  "Most Popular",
     tagColor: "accent",

@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { site, services } from '../data/site';
 ---
 
-<Layout title={`Services | ${site.name} — Life Coach`} description="1-on-1 life coaching and a free discovery call for mid-career adults ready to transform their lives.">
+<Layout title={`Services | ${site.name} — Life Coach`} description="1-on-1 life coaching and a free discovery call for people who feel stuck, unsure what's next, and ready for meaningful change.">
 
   <section class="page-hero">
     <div class="container">
@@ -59,9 +59,9 @@ import { site, services } from '../data/site';
       <div class="process-steps">
         {[
           { n:"1", title:"You Show Up. (That's the Hardest Part.)", desc:"Book the free call. That's it. You don't need a goal statement or to have it figured out. You just need to show up — I'll meet you exactly where you are." },
-          { n:"2", title:"We Go Below the Surface.",  desc:"Not just what's happening — but what's really happening. The suppressed stuff. The patterns you haven't been able to name. We go there together." },
-          { n:"3", title:"You Get Pushed. And Pulled.", desc:"I push when you need it and pull when you're ready. I use whatever is in my toolbox to get you moving — and I will not let you stay stuck." },
-          { n:"4", title:"You Leave Lighter. More Whole.",desc:"With more clarity, more space, more bandwidth for the things that actually matter. Clients often say it's the first time they've felt like themselves in years." },
+          { n:"2", title:"We Go Below the Surface.",  desc:"Not just what's happening — but what's really happening. Who you are underneath all the roles. What you actually want. What's been quietly affecting the people closest to you. We go there together." },
+          { n:"3", title:"You're Challenged. And Held.", desc:"I challenge you when you need it and hold the space when it's hard. I won't let you stay comfortable in the stuck — but I'll never leave you alone in the discomfort either." },
+          { n:"4", title:"You Leave Lighter. More You.",desc:"With more clarity, more space, more ability to show up for the people who matter most. Clients often say it's the first time they've felt like themselves — really themselves — in years." },
         ].map(s => (
           <div class="process-step fade-up">
             <div class="step-number">{s.n}</div>

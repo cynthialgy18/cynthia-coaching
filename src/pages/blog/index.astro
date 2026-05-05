@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Layout title={`Blog | ${site.name} — Life Coach`} description="Free articles, tools and insights for mid-career adults navigating change, burnout and purpose.">
+<Layout title={`Blog | ${site.name} — Life Coach`} description="Free articles, tools and honest reflections for people feeling stuck, unsure what's next, or searching for what truly matters.">
 
   <section class="page-hero">
     <div class="container">

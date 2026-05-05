@@ -9,8 +9,8 @@ export interface Testimonial {
   featured?: boolean;
 }
 
-// ── 5 Life Coaching Clients ───────────────────────────────────────────────────
-// ── 5 Mentor Coaching Clients ─────────────────────────────────────────────────
+// ── Life Coaching Clients ────────────────────────────────────────────────────
+// ── Mentor Coaching Clients ──────────────────────────────────────────────────
 
 export const testimonials: Testimonial[] = [
 
@@ -68,7 +68,25 @@ export const testimonials: Testimonial[] = [
     quote: "Cynthia is a kind and understanding coach who always puts her clients' best interests at heart. She provides a comfortable space for sharing and is able to get to the heart of the matter through her deep questioning. I would recommend her to anyone who needs illumination for their issues.",
   },
 
-  // ── MENTOR COACHING CLIENTS (5) ──────────────────────────────────────────
+  {
+    name: "Vivek",
+    role: "Consultant",
+    industry: "Consulting",
+    avatar: "V",
+    type: "coaching",
+    quote: "Cynthia's direct and frank approach helped me get the best out of our sessions. She created a space that helped me reflect on how I can improve while also identifying what I need to work on personally. The sessions were a perfect balance of emotional introspection, tangible actions, and long-term reflection.",
+  },
+  {
+    name: "Chris Sheng",
+    role: "Recruitment Solutions Partner",
+    industry: "Recruitment & HR",
+    avatar: "C",
+    type: "coaching",
+    source: "linkedin",
+    quote: "Cynthia is a true professional with a passion for helping others in their personal breakthrough journey. Her coaching style is both supportive and challenging, pushing me to think critically and develop new skills. I've unlocked some doors through Cynthia and appreciate the guidance and support. Thank you.",
+  },
+
+  // ── MENTOR COACHING CLIENTS ───────────────────────────────────────────────
   {
     name: "Kum Seng Tung",
     role: "Chief Financial Officer",
