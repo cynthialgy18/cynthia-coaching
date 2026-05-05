@@ -25,7 +25,7 @@ export const testimonials: Testimonial[] = [
 
   {
     name: "K",
-    role: "Coaching Client",
+    role: "Commodities Industry",
     industry: "Commodities",
     avatar: "K",
     type: "coaching",
@@ -46,7 +46,7 @@ export const testimonials: Testimonial[] = [
 
   {
     name: "Yvonne Sia",
-    role: "Coaching Client",
+    role: "Human Resources",
     industry: "Human Resources",
     avatar: "Y",
     type: "coaching",
