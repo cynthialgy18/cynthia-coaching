@@ -107,7 +107,6 @@ export const testimonials: Testimonial[] = [
     industry: "Banking & Consulting",
     avatar: "R",
     type: "mentor",
-    featured: true,
     quote: "After 28 years in banking — finishing as CEO of a Swiss private bank — I had the pleasure of having Cynthia as my mentor coach over three sessions. She is extremely easy to establish rapport with and made me feel at ease quickly. Her feedback was very incisive; she has a clear eye for detail with my recorded coaching sessions. She helped me sharpen my coaching, focus on open-ended queries, balance emotional and intellectual probes, and ensure a clear action plan. I would highly recommend Cynthia as a highly experienced, pleasant, and capable mentor coach.",
   },
 
@@ -157,6 +156,7 @@ export const testimonials: Testimonial[] = [
     industry: "Human Resources",
     avatar: "J",
     type: "mentor",
+    featured: true,
     quote: "Cynthia's feedback helped me realise I can take on a more courageous and confident role as a developing coach — and not let my assumptions limit my capability. She helped me widen my questioning capacity and see the bigger picture. After applying her feedback, I had a coaching drill where the response was extremely positive — I was focused, asked clear questions, and helped my client move forward. Obtaining mentorship from a PCC coach has been invaluable.",
   },
 
