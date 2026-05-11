@@ -6,8 +6,6 @@ export const site = {
   description: "Feeling stuck or unsure what's next? Cynthia helps you cut through the noise, reconnect to what truly matters, and make meaningful change — in how you see yourself, the relationships that count, and what's core to who you are.",
   email:       "cynthialgy18@gmail.com",
   linkedin:    "https://www.linkedin.com/in/cynthialgy/",
-  instagram:   "#",
-  facebook:    "#",
   rate:        "$350",
   credential:  "ICF Accredited — PCC Level",
   copyright:   "© 2025 Cynthia. All rights reserved.",
