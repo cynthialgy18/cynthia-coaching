@@ -53,33 +53,7 @@ export const testimonials: Testimonial[] = [
     quote: "Cynthia is a powerful coach who supports me in challenging myself, making me more aware of my fixations and gives me a trustful space to discover and bloom into who I want to really become. Her firm yet nurturing coaching style gives me the faith, courage and clarity to leap forward in any challenging situations. I would recommend Cynthia as a coach to anyone who seeks breakthroughs in their life.",
   },
 
-  {
-    name: "Leaf Yap",
-    role: "Personal Assistant to MD",
-    industry: "Executive Support",
-    avatar: "L",
-    type: "coaching",
-    quote: "I had the privilege to be coached by Cynthia many years back and am very fortunate to be coached by her again. As an ever-evolving coach working on herself and clients at the same time, the length and breadth of Cynthia's coaching is greatly augmented — with her ability to create new depths of awareness, causing a tremendous amount of clarity and renewed energy. Cynthia has become a more well-rounded coach who draws out more potential in her clients.",
-  },
 
-  {
-    name: "Larry Wong",
-    role: "Consultant",
-    industry: "Consulting",
-    avatar: "L",
-    type: "coaching",
-    quote: "Cynthia is a kind and understanding coach who always puts her clients' best interests at heart. She provides a comfortable space for sharing and is able to get to the heart of the matter through her deep questioning. I would recommend her to anyone who needs illumination for their issues.",
-  },
-
-  {
-    name: "Chris Sheng",
-    role: "Recruitment Solutions Partner",
-    industry: "Recruitment & HR",
-    avatar: "C",
-    type: "coaching",
-    source: "linkedin",
-    quote: "Cynthia is a true professional with a passion for helping others in their personal breakthrough journey. Her coaching style is both supportive and challenging, pushing me to think critically and develop new skills. I've unlocked some doors through Cynthia and appreciate the guidance and support. Thank you.",
-  },
 
   {
     name: "Jiayin",
@@ -132,13 +106,13 @@ export const testimonials: Testimonial[] = [
   },
 
   {
-    name: "Richelle Samy",
-    role: "Coach in Training",
-    industry: "Learning & Leadership / Sport Performance",
-    avatar: "R",
+    name: "Chris Sheng",
+    role: "Recruitment Solutions Partner",
+    industry: "Recruitment & HR",
+    avatar: "C",
     type: "mentor",
     source: "linkedin",
-    quote: "Cynthia was my mentor during my coaching journey. She has a unique coaching style — she is authentic, which fits her personality and inspired me to find my own style and move away from the textbooks. Cynthia is really good at challenging her mentees and pointing out what can be improved, which makes her a great mentor as she is genuinely invested in the growth of her clients.",
+    quote: "Cynthia is a true professional with a passion for helping others in their personal breakthrough journey. Her coaching style is both supportive and challenging, pushing me to think critically and develop new skills. I've unlocked some doors through Cynthia and appreciate the guidance and support. Thank you.",
   },
 
   {

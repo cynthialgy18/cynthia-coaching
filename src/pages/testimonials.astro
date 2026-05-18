@@ -3,12 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import { site } from '../data/site';
 import { testimonials } from '../data/testimonials';
 
-const featuredPool  = testimonials.filter(t => t.featured);
-const coachingClients = testimonials.filter(t => t.type === 'coaching' && !t.featured);
-const mentorClients   = testimonials.filter(t => t.type === 'mentor'   && !t.featured);
+const coachingClients = testimonials.filter(t => t.type === 'coaching');
+const mentorClients   = testimonials.filter(t => t.type === 'mentor');
 ---
 
-<Layout title={`Testimonials | ${site.name} — Life Coach`} description="Real stories from real people — hear what it looks like to feel stuck, do the work, and reconnect to what truly matters.">
+<Layout title={`Testimonials | ${site.name} — Relational Coach`} description="Real stories from real people — hear what it looks like to feel stuck, do the work, and reconnect to what truly matters.">
 
   <section class="page-hero">
     <div class="container">
@@ -33,14 +32,14 @@ const mentorClients   = testimonials.filter(t => t.type === 'mentor'   && !t.fea
     </div>
   </div>
 
-  <!-- ROTATING FEATURED — one shown per week via JS -->
+  <!-- ROTATING FEATURED — one per week across ALL testimonials, Monday = week start -->
   <section class="section">
     <div class="container">
       <div class="section-header center fade-up" style="margin-bottom:2rem;">
         <p class="section-label">Featured This Week</p>
       </div>
       <div id="featuredPool">
-        {featuredPool.map((t, i) => (
+        {testimonials.map((t, i) => (
           <div
             data-fi={i}
             style="display:none;background:linear-gradient(135deg,#FDF8F3,#F2E9DF);border:1px solid var(--border);border-radius:var(--radius);padding:56px;max-width:860px;margin:0 auto;text-align:center;"
@@ -53,12 +52,6 @@ const mentorClients   = testimonials.filter(t => t.type === 'mentor'   && !t.fea
               <div style="text-align:left;">
                 <strong style="display:block;font-size:1rem;">{t.name}</strong>
                 <span style="font-size:.85rem;color:var(--text-light);">{t.role}</span>
-                {t.source === 'linkedin' && (
-                  <a href={site.linkedin} target="_blank" rel="noopener" style="font-size:.75rem;color:#0A66C2;display:flex;align-items:center;gap:4px;margin-top:4px;">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    Verified on LinkedIn
-                  </a>
-                )}
               </div>
             </div>
           </div>
@@ -67,16 +60,16 @@ const mentorClients   = testimonials.filter(t => t.type === 'mentor'   && !t.fea
     </div>
   </section>
 
-  <!-- LIFE COACHING CLIENTS -->
+  <!-- 1-ON-1 COACHING CLIENTS -->
   <section class="section-sm bg-card">
     <div class="container">
       <div class="section-header center fade-up">
-        <p class="section-label">Life Coaching</p>
+        <p class="section-label">Relational Coaching</p>
         <h2>1-on-1 Coaching Clients</h2>
         <p>People who came in feeling stuck, worn out, or unsure what was next — and did the work to come out the other side.</p>
       </div>
       <div class="testimonials-grid" style="margin-top:3rem;">
-        {[...featuredPool.filter(t => t.type === 'coaching'), ...coachingClients].map(t => (
+        {coachingClients.map(t => (
           <div class="testimonial-card fade-up">
             <p class="testimonial-quote">{t.quote}</p>
             <div class="testimonial-author">
@@ -86,14 +79,6 @@ const mentorClients   = testimonials.filter(t => t.type === 'mentor'   && !t.fea
                 <span>{t.role}</span>
               </div>
             </div>
-            {t.source === 'linkedin' && (
-              <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
-                <a href={site.linkedin} target="_blank" rel="noopener" style="font-size:.75rem;color:var(--text-light);display:flex;align-items:center;gap:5px;">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                  Verified on LinkedIn
-                </a>
-              </div>
-            )}
           </div>
         ))}
       </div>
@@ -106,10 +91,10 @@ const mentorClients   = testimonials.filter(t => t.type === 'mentor'   && !t.fea
       <div class="section-header center fade-up">
         <p class="section-label">Mentor Coaching</p>
         <h2>Coaches I've Mentored</h2>
-        <p>Coaches in training and practicing coaches who worked with me to sharpen their craft, deepen their presence, and grow their range.</p>
+        <p>Coaches in training and practising coaches who worked with me to sharpen their craft, deepen their presence, and grow their range.</p>
       </div>
       <div class="testimonials-grid" style="margin-top:3rem;">
-        {[...featuredPool.filter(t => t.type === 'mentor'), ...mentorClients].map(t => (
+        {mentorClients.map(t => (
           <div class="testimonial-card fade-up">
             <p class="testimonial-quote">{t.quote}</p>
             <div class="testimonial-author">
@@ -119,22 +104,8 @@ const mentorClients   = testimonials.filter(t => t.type === 'mentor'   && !t.fea
                 <span>{t.role}</span>
               </div>
             </div>
-            {t.source === 'linkedin' && (
-              <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
-                <a href={site.linkedin} target="_blank" rel="noopener" style="font-size:.75rem;color:var(--text-light);display:flex;align-items:center;gap:5px;">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                  Verified on LinkedIn
-                </a>
-              </div>
-            )}
           </div>
         ))}
-      </div>
-      <div style="text-align:center;margin-top:3rem;" class="fade-up">
-        <a href={site.linkedin} target="_blank" rel="noopener" class="btn btn-outline" style="display:inline-flex;align-items:center;gap:8px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          See More Reviews on LinkedIn →
-        </a>
       </div>
     </div>
   </section>
@@ -144,9 +115,9 @@ const mentorClients   = testimonials.filter(t => t.type === 'mentor'   && !t.fea
       <p class="section-label">Your Story Is Next</p>
       <h2>What Would Your Testimonial Say?</h2>
       <p class="poem-line">"My hand is still waiting for yours."</p>
-      <p>Book a free discovery call and let's start from wherever you are right now.</p>
+      <p>Book a discovery call and let's start from wherever you are right now.</p>
       <div class="cta-btns">
-        <a href="/contact" class="btn btn-white">Book My Free Call</a>
+        <a href="/contact" class="btn btn-white">Book My Call</a>
         <a href="/services" class="btn btn-outline" style="border-color:rgba(250,246,240,.3);color:rgba(250,246,240,.9);">View Services</a>
       </div>
     </div>
@@ -155,11 +126,14 @@ const mentorClients   = testimonials.filter(t => t.type === 'mentor'   && !t.fea
 </Layout>
 
 <script>
-  // Show one featured testimonial per week, cycling through the pool
+  // Rotate featured testimonial weekly — Monday = first day of week
+  // Unix epoch was a Thursday; first Monday after epoch = Jan 5, 1970 = +4 days
+  const MONDAY_EPOCH_OFFSET = 4 * 24 * 60 * 60 * 1000;
+  const MS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
   const cards = document.querySelectorAll<HTMLElement>('#featuredPool [data-fi]');
   if (cards.length) {
-    const week = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
-    const idx  = week % cards.length;
+    const week = Math.floor((Date.now() - MONDAY_EPOCH_OFFSET) / MS_PER_WEEK);
+    const idx  = ((week % cards.length) + cards.length) % cards.length;
     cards[idx].style.display = 'block';
   }
 </script>
