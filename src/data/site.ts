@@ -37,7 +37,7 @@ export const services = [
     tagColor: "green",
     desc:     "A 20-minute conversation to see if we're the right fit for each other. Come with a part of you that is willing to receive.",
     features: [
-      "20-minute video, phone or in-person call",
+      "20-minute video call or phone call",
       "Explore what's bringing you here right now",
       "Receive honest, personalised reflections",
       "Learn how relational coaching could help you",
