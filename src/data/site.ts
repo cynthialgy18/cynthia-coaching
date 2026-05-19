@@ -32,7 +32,7 @@ export const services = [
   },
   {
     icon:     "☕",
-    title:    "Free Discovery Call",
+    title:    "Discovery Call",
     tagline:  "Complimentary",
     tagColor: "green",
     desc:     "A 20-minute conversation to see if we're the right fit for each other. Come with a part of you that is willing to receive.",
