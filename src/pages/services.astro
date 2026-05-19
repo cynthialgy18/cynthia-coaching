@@ -29,7 +29,7 @@ import { site, services } from '../data/site';
               <span class="service-badge" style={s.tagColor === 'green' ? 'background:var(--green)' : ''}>{s.tagline}</span>
             </div>
             <div style="flex:1;">
-              <h2 style="font-size:1.8rem;margin-bottom:.75rem;">{s.title}</h2>
+              <h3 style="font-size:1.8rem;margin-bottom:.75rem;">{s.title}</h3>
               <p style="margin-bottom:1.5rem;">{s.desc}</p>
               <ul class="service-features" style="margin-bottom:2rem;">
                 {s.features.map(f => <li>{f}</li>)}
@@ -89,9 +89,9 @@ import { site, services } from '../data/site';
           { q:"I'm not sure I'm 'ready'. Should I still book?", a:"Yes. 'Not ready' is exactly who I work with. You don't need to have it figured out. You don't need a clear goal. You just need to be willing to have an honest conversation. That's enough to start." },
         ].map(faq => (
           <details style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;cursor:pointer;">
-            <summary style="font-weight:700;font-size:1rem;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            <summary style="font-weight:700;font-size:1rem;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;">
               {faq.q}
-              <span style="font-size:1.3rem;color:var(--accent);font-weight:300;">+</span>
+              <span class="faq-icon" style="font-size:1.3rem;color:var(--accent);font-weight:300;flex-shrink:0;transition:transform .2s ease;">+</span>
             </summary>
             <p style="margin-top:14px;font-size:.95rem;">{faq.a}</p>
           </details>
@@ -99,6 +99,15 @@ import { site, services } from '../data/site';
       </div>
     </div>
   </section>
+
+  <script>
+    document.querySelectorAll('details').forEach(d => {
+      d.addEventListener('toggle', () => {
+        const icon = d.querySelector('.faq-icon') as HTMLElement | null;
+        if (icon) icon.textContent = d.open ? '−' : '+';
+      });
+    });
+  </script>
 
   <section class="cta-banner">
     <div class="container">
