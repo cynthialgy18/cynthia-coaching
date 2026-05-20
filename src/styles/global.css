@@ -1202,6 +1202,11 @@ textarea { resize: vertical; min-height: 120px; }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+/* Mobile hero avatar — hidden on desktop, shown on mobile */
+.hero-avatar-mobile {
+  display: none;
+}
+
 @media (max-width: 960px) {
   .hero-inner,
   .about-teaser-inner,
@@ -1209,6 +1214,23 @@ textarea { resize: vertical; min-height: 120px; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .story-block, .story-block.reverse { grid-template-columns: 1fr; gap: 36px; direction: ltr; margin-bottom: 3.5rem; }
   .hero-image { display: none; }
+  .hero-avatar-mobile {
+    display: block;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.4rem;
+    border: 3px solid rgba(200,131,26,.45);
+    box-shadow: 0 0 0 6px rgba(200,131,26,.1);
+    flex-shrink: 0;
+  }
+  .hero-avatar-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+  }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
   .values-grid, .credentials { grid-template-columns: 1fr; }

@@ -3,7 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import { site, services } from '../data/site';
 import { testimonials } from '../data/testimonials';
 
-const preview = testimonials.slice(0, 3);
+// Homepage preview — locked to these 3 names
+const HOMEPAGE_NAMES = ['Teng Run Run', 'K', 'Ben McDonald'];
+const preview = HOMEPAGE_NAMES.map(n => testimonials.find(t => t.name === n)).filter(Boolean);
 ---
 
 <Layout title={`${site.name} | Relational Coach`} description={site.description}>
@@ -13,6 +15,9 @@ const preview = testimonials.slice(0, 3);
     <div class="container">
       <div class="hero-inner">
         <div class="hero-content">
+          <div class="hero-avatar-mobile">
+            <img src="/images/headshot-6.jpg" alt="Cynthia — Relational Coach" />
+          </div>
           <p class="section-label">Relational Coaching with Cynthia Lim</p>
           <h1>There's So Much More to You Than Your Current Situation.</h1>
           <p>You might be showing up for everyone else — but somewhere along the way, you've lost the thread back to yourself. Not broken. Not failing. Just carrying more than you should have to carry alone. I work with people who are ready to be honest — with me, and with themselves.</p>
