@@ -1233,7 +1233,8 @@ textarea { resize: vertical; min-height: 120px; }
   }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
-  .values-grid, .credentials { grid-template-columns: 1fr; }
+  .credentials { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
   .form-row { grid-template-columns: 1fr; gap: 0; }
 }
 
@@ -1246,4 +1247,5 @@ textarea { resize: vertical; min-height: 120px; }
   .hero-btns { flex-direction: column; }
   .hero-btns .btn { justify-content: center; }
   .cta-btns  { flex-direction: column; align-items: center; }
+  .values-grid { grid-template-columns: 1fr; }
 }
