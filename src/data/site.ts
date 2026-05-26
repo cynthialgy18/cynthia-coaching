@@ -19,7 +19,7 @@ export const services = [
     tagColor: "accent",
     desc:     "A focused, honest conversation — just you and me. No programme, no formula. We work with what's real for you, at a pace that makes sense for where you are.",
     features: [
-      "60-minute 1-on-1 session — video call or phone call",
+      "60-minute 1-on-1 session — in person or online",
       "Tailored entirely to what you're working through",
       "Honest, direct — nothing held back",
     ],
