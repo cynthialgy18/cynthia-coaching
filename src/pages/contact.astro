@@ -58,6 +58,7 @@ import { site } from '../data/site';
             <h3>Send Me a Message</h3>
             {/* ACTIVATE: go to formspree.io → New Form → enter cynthialgy18@gmail.com → copy the 8-char ID → replace YOUR_FORM_ID below */}
             <form id="contactForm" action="https://formspree.io/f/mvzywyge" method="POST">
+              <input type="hidden" name="_next" value="https://cynthia-coaching.pages.dev/contact?sent=1" />
               <div class="form-row">
                 <div class="form-group">
                   <label for="firstName">First Name</label>
