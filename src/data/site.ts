@@ -26,7 +26,7 @@ export const services = [
     price:    "$350",
     unit:     "/ session",
     note:     "Sessions booked individually or in packages",
-    cta:      "Apply Now →",
+    cta:      "Book a Session →",
     ctaHref:  "/contact",
     featured: true,
   },
