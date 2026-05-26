@@ -44,10 +44,6 @@ import { site } from '../data/site';
               <div class="contact-method-icon">💼</div>
               <div><strong>LinkedIn</strong><a href={site.linkedin} target="_blank" rel="noopener" style="font-size:.83rem;color:var(--accent);">View Profile</a></div>
             </div>
-            <div class="contact-method">
-              <div class="contact-method-icon">🕐</div>
-              <div><strong>Response Time</strong><span>Within 48 hours</span></div>
-            </div>
           </div>
 
           <div style="background:var(--bg-card);border-radius:var(--radius);padding:24px;border-left:4px solid var(--accent);">
@@ -56,23 +52,8 @@ import { site } from '../data/site';
           </div>
         </div>
 
-        <!-- RIGHT: Booking + Form -->
+        <!-- RIGHT: Form -->
         <div class="fade-up">
-          <!-- Calendly placeholder — replace with your embed code -->
-          <div class="calendly-placeholder">
-            <div class="calendly-placeholder-icon">📅</div>
-            <h4>Schedule Your Discovery Call</h4>
-            <p>Your booking calendar will appear here once you connect Calendly.</p>
-            <p style="font-size:.82rem;margin-top:.5rem;">Recommended: <strong>Calendly</strong> · TidyCal · Acuity</p>
-            <a href="https://calendly.com" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem;">Set Up Calendly Free →</a>
-          </div>
-
-          <div style="display:flex;align-items:center;gap:16px;margin:2rem 0;">
-            <div style="flex:1;height:1px;background:var(--border);"></div>
-            <span style="font-size:.85rem;color:var(--text-light);white-space:nowrap;">or send a message instead</span>
-            <div style="flex:1;height:1px;background:var(--border);"></div>
-          </div>
-
           <div class="contact-form-card">
             <h3>Send Me a Message</h3>
             {/* To activate: replace YOUR_FORM_ID after creating a free account at formspree.io */}
@@ -109,7 +90,6 @@ import { site } from '../data/site';
                 <textarea id="message" name="message" placeholder="What's brought you here today?" required></textarea>
               </div>
               <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message →</button>
-              <p style="font-size:.78rem;color:var(--text-light);text-align:center;margin-top:12px;">I read every message and reply within 48 hours.</p>
             </form>
           </div>
         </div>
