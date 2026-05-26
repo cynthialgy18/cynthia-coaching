@@ -116,7 +116,7 @@ const preview = HOMEPAGE_NAMES.map(n => testimonials.find(t => t.name === n)).fi
       <div class="services-grid">
         {services.map(s => (
           <div class={`service-card fade-up${s.featured ? ' featured' : ''}`}>
-            {s.featured && <span class="service-badge">{s.tagline}</span>}
+            {s.featured && s.tagline && <span class="service-badge">{s.tagline}</span>}
             <div class="service-icon">{s.icon}</div>
             <h3>{s.title}</h3>
             <p>{s.desc}</p>

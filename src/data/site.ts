@@ -15,11 +15,11 @@ export const services = [
   {
     icon:     "🤝",
     title:    "1-on-1 Coaching",
-    tagline:  "Most Popular",
+    tagline:  "",
     tagColor: "accent",
     desc:     "A focused, honest conversation — just you and me. No programme, no formula. We work with what's real for you, at a pace that makes sense for where you are.",
     features: [
-      "60-minute 1-on-1 session — video or in person",
+      "60-minute 1-on-1 session — video call or phone call",
       "Tailored entirely to what you're working through",
       "Honest, direct — nothing held back",
     ],
