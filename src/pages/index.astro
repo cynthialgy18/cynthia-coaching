@@ -123,7 +123,7 @@ const preview = HOMEPAGE_NAMES.map(n => testimonials.find(t => t.name === n)).fi
             <ul class="service-features">
               {s.features.slice(0, 4).map(f => <li>{f}</li>)}
             </ul>
-            <div class="service-price">{s.price} <span>{s.unit}</span></div>
+            {s.price && <div class="service-price">{s.price} <span>{s.unit}</span></div>}
             <a href={s.ctaHref} class={`btn ${s.featured ? 'btn-primary' : 'btn-green'}`}>{s.cta}</a>
           </div>
         ))}

@@ -35,10 +35,10 @@ import { site, services } from '../data/site';
                 {s.features.map(f => <li>{f}</li>)}
               </ul>
               <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
-                <div>
+                {s.price && <div>
                   <div class="service-price">{s.price} <span>{s.unit}</span></div>
                   <div style="font-size:.82rem;color:var(--text-light);margin-top:4px;">{s.note}</div>
-                </div>
+                </div>}
                 <a href={s.ctaHref} class={`btn ${s.featured ? 'btn-primary' : 'btn-green'}`}>{s.cta}</a>
               </div>
             </div>
