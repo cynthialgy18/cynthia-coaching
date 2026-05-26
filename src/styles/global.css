@@ -644,6 +644,18 @@ p  { color: var(--text-mid); line-height: 1.8; }
   color: rgba(250,246,240,.8);
   text-align: center;
 }
+.heart-pullquote {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(1.25rem, 2.8vw, 1.65rem) !important;
+  color: var(--accent) !important;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5 !important;
+  padding: 1.6rem 0 !important;
+  border-top: 1px solid rgba(200,131,26,.3);
+  border-bottom: 1px solid rgba(200,131,26,.3);
+  margin: .5rem 0 !important;
+}
 .heart-closing {
   font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important;
   color: var(--accent) !important;
