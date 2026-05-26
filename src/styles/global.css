@@ -976,25 +976,6 @@ input:focus, textarea:focus, select:focus {
 }
 textarea { resize: vertical; min-height: 120px; }
 
-.calendly-placeholder {
-  background: var(--bg-card);
-  border: 2px dashed var(--border);
-  border-radius: var(--radius);
-  padding: 48px 32px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-.calendly-placeholder-icon { font-size: 3rem; }
-.calendly-placeholder h4  { font-size: 1.1rem; }
-.calendly-placeholder p   { font-size: .9rem; max-width: 320px; }
-.calendly-embed {
-  border-radius: var(--radius);
-  overflow: hidden;
-  min-height: 600px;
-}
 
 /* ============================================================
    FOOTER
