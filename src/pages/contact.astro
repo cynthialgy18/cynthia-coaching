@@ -56,26 +56,33 @@ import { site } from '../data/site';
         <div class="fade-up">
           <div class="contact-form-card">
             <h3>Send Me a Message</h3>
-            {/* ACTIVATE: go to formspree.io → New Form → enter cynthialgy18@gmail.com → copy the 8-char ID → replace YOUR_FORM_ID below */}
-            <form id="contactForm" action="https://formspree.io/f/mvzywyge" method="POST">
-              <input type="hidden" name="_next" value="https://cynthia-coaching.pages.dev/contact?sent=1" />
+            <div data-fs-success style="display:none;text-align:center;padding:40px 20px;">
+              <div style="font-size:2.5rem;margin-bottom:16px;">✓</div>
+              <h3 style="margin-bottom:.5rem;">Message received.</h3>
+              <p style="color:var(--text-light);">I'll be in touch soon.</p>
+            </div>
+            <div data-fs-error style="display:none;color:#c0392b;font-size:.88rem;margin-bottom:12px;padding:12px;background:#fdf0ee;border-radius:var(--radius-sm);"></div>
+            <form id="contactForm">
               <div class="form-row">
                 <div class="form-group">
                   <label for="firstName">First Name</label>
-                  <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
+                  <input type="text" id="firstName" name="firstName" placeholder="Jane" required data-fs-field />
+                  <span data-fs-error="firstName" style="font-size:.8rem;color:#c0392b;"></span>
                 </div>
                 <div class="form-group">
                   <label for="lastName">Last Name</label>
-                  <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+                  <input type="text" id="lastName" name="lastName" placeholder="Smith" required data-fs-field />
+                  <span data-fs-error="lastName" style="font-size:.8rem;color:#c0392b;"></span>
                 </div>
               </div>
               <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+                <input type="email" id="email" name="email" placeholder="jane@example.com" required data-fs-field />
+                <span data-fs-error="email" style="font-size:.8rem;color:#c0392b;"></span>
               </div>
               <div class="form-group">
                 <label for="interest">What are you hoping to work on?</label>
-                <select id="interest" name="interest">
+                <select id="interest" name="interest" data-fs-field>
                   <option value="" disabled selected>Select an area…</option>
                   <option>Feeling stuck or unsure what's next</option>
                   <option>Figuring out who I am (identity &amp; values)</option>
@@ -88,11 +95,18 @@ import { site } from '../data/site';
               </div>
               <div class="form-group">
                 <label for="message">Tell me a little about where you are right now</label>
-                <textarea id="message" name="message" placeholder="What's brought you here today?" required></textarea>
+                <textarea id="message" name="message" placeholder="What's brought you here today?" required data-fs-field></textarea>
+                <span data-fs-error="message" style="font-size:.8rem;color:#c0392b;"></span>
               </div>
-              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message →</button>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" data-fs-submit-btn>Send Message →</button>
             </form>
           </div>
+
+          <script>
+            window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+            formspree('initForm', { formElement: '#contactForm', formId: 'mvzywyge' });
+          </script>
+          <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
         </div>
 
       </div>

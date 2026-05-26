@@ -70,19 +70,7 @@ const { title, description = "Feeling stuck or unsure what's next? Cynthia helps
       }, { threshold: 0.12 });
       fadeEls.forEach(el => obs.observe(el));
     }
-    // Contact form — native POST to Formspree (no JS intercept)
-    // Formspree redirects to ?sent=1 on success; we show a thank-you message
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('sent') === '1') {
-      const form = document.getElementById('contactForm') as HTMLFormElement | null;
-      if (form) {
-        form.innerHTML = `<div style="text-align:center;padding:40px 20px;">
-          <div style="font-size:2.5rem;margin-bottom:16px;">✓</div>
-          <h3 style="margin-bottom:.5rem;">Message received.</h3>
-          <p style="color:var(--text-light);">I'll be in touch soon.</p>
-        </div>`;
-      }
-    }
+    // Form handling delegated to @formspree/ajax SDK on contact page
   </script>
 </body>
 </html>
