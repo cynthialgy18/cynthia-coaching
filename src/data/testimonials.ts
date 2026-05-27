@@ -11,7 +11,7 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
 
-  // ── LIFE COACHING CLIENTS ─────────────────────────────────────────────────
+  // ── RELATIONAL COACHING CLIENTS ──────────────────────────────────────────
 
   {
     name: "Teng Run Run",
