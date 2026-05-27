@@ -49,58 +49,85 @@ import { site } from '../data/site';
         <!-- RIGHT: Form -->
         <div class="fade-up">
           <div class="contact-form-card">
-            <h3>Send Me a Message</h3>
-            <div data-fs-success style="display:none;text-align:center;padding:48px 24px;">
+            <div id="formSuccess" style="display:none;text-align:center;padding:48px 24px;">
               <div style="font-size:2.8rem;margin-bottom:20px;color:var(--accent);">✓</div>
               <h3 style="margin-bottom:.75rem;font-family:'Playfair Display',serif;">Got it. I'll read every word.</h3>
               <p style="color:var(--text-light);max-width:340px;margin:0 auto;">I'll be in touch within 1–2 business days.</p>
             </div>
-            <div data-fs-error style="display:none;color:#c0392b;font-size:.875rem;margin-bottom:12px;padding:12px;background:#fdf0ee;border-radius:var(--radius-sm);"></div>
-            <form id="contactForm">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="firstName">First Name</label>
-                  <input type="text" id="firstName" name="firstName" placeholder="Jane" required data-fs-field />
-                  <span data-fs-error="firstName" style="font-size:.8rem;color:#c0392b;"></span>
+            <div id="formInner">
+              <h3>Send Me a Message</h3>
+              <div id="formError" style="display:none;color:#c0392b;font-size:.875rem;margin-bottom:12px;padding:12px;background:#fdf0ee;border-radius:var(--radius-sm);"></div>
+              <form id="contactForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="lastName">Last Name</label>
-                  <input type="text" id="lastName" name="lastName" placeholder="Smith" required data-fs-field />
-                  <span data-fs-error="lastName" style="font-size:.8rem;color:#c0392b;"></span>
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="jane@example.com" required />
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="jane@example.com" required data-fs-field />
-                <span data-fs-error="email" style="font-size:.8rem;color:#c0392b;"></span>
-              </div>
-              <div class="form-group">
-                <label for="interest">What are you hoping to work on?</label>
-                <select id="interest" name="interest" data-fs-field>
-                  <option value="" disabled selected>Select an area…</option>
-                  <option>Feeling stuck or unsure what's next</option>
-                  <option>Figuring out who I am (identity &amp; values)</option>
-                  <option>Reconnecting with what truly matters</option>
-                  <option>Relationships — with myself or others</option>
-                  <option>Career change or direction</option>
-                  <option>Confidence &amp; self-belief</option>
-                  <option>Something else</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="message">Tell me a little about where you are right now</label>
-                <textarea id="message" name="message" placeholder="What's brought you here today?" required data-fs-field></textarea>
-                <span data-fs-error="message" style="font-size:.8rem;color:#c0392b;"></span>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" data-fs-submit-btn>Send Message →</button>
-            </form>
+                <div class="form-group">
+                  <label for="interest">What are you hoping to work on?</label>
+                  <select id="interest" name="interest">
+                    <option value="" disabled selected>Select an area…</option>
+                    <option>Feeling stuck or unsure what's next</option>
+                    <option>Figuring out who I am (identity &amp; values)</option>
+                    <option>Reconnecting with what truly matters</option>
+                    <option>Relationships — with myself or others</option>
+                    <option>Career change or direction</option>
+                    <option>Confidence &amp; self-belief</option>
+                    <option>Something else</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message">Tell me a little about where you are right now</label>
+                  <textarea id="message" name="message" placeholder="What's brought you here today?" required></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message →</button>
+              </form>
+            </div>
           </div>
 
           <script>
-            window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-            formspree('initForm', { formElement: '#contactForm', formId: 'mvzywyge' });
+            document.getElementById('contactForm').addEventListener('submit', async function(e) {
+              e.preventDefault();
+              const btn     = document.getElementById('submitBtn');
+              const errorEl = document.getElementById('formError');
+              btn.disabled  = true;
+              btn.textContent = 'Sending…';
+              errorEl.style.display = 'none';
+
+              try {
+                const res  = await fetch('https://formspree.io/f/mvzywyge', {
+                  method:  'POST',
+                  body:    new FormData(this),
+                  headers: { 'Accept': 'application/json' }
+                });
+                const json = await res.json();
+                if (res.ok) {
+                  document.getElementById('formInner').style.display  = 'none';
+                  document.getElementById('formSuccess').style.display = 'block';
+                } else {
+                  const msg = (json.errors || []).map(function(e) { return e.message; }).join(', ') || 'Something went wrong. Please try again.';
+                  errorEl.textContent   = msg;
+                  errorEl.style.display = 'block';
+                  btn.disabled          = false;
+                  btn.textContent       = 'Send Message →';
+                }
+              } catch(err) {
+                errorEl.textContent   = 'Network error — please check your connection and try again.';
+                errorEl.style.display = 'block';
+                btn.disabled          = false;
+                btn.textContent       = 'Send Message →';
+              }
+            });
           </script>
-          <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
         </div>
 
       </div>
