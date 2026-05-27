@@ -37,7 +37,7 @@ import { site, services } from '../data/site';
               <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
                 {s.price && <div>
                   <div class="service-price">{s.price} <span>{s.unit}</span></div>
-                  <div style="font-size:.82rem;color:var(--text-light);margin-top:4px;">{s.note}</div>
+                  <div style="font-size:.8rem;color:var(--text-light);margin-top:4px;">{s.note}</div>
                 </div>}
                 <a href={s.ctaHref} class={`btn ${s.featured ? 'btn-primary' : 'btn-green'}`}>{s.cta}</a>
               </div>
@@ -86,7 +86,7 @@ import { site, services } from '../data/site';
           { q:"Is relational coaching the same as therapy?", a:"No — quite different. Therapy typically works on healing from the past. Coaching works on where you are right now and where you're going. We work forward, not backward. If I sense you need therapeutic support, I'll always be honest about that and point you toward the right resource." },
           { q:"How quickly will I see a difference?", a:"Around 3 to 4 sessions in, most clients begin to notice real shifts — more clarity, more space, a different relationship with what's been weighing on them. Deeper changes take longer. It depends on what you're working through and how you show up. I can't guarantee outcomes — but I'll bring everything I have." },
           { q:"What if you're not the right coach for me?", a:"Then I'll tell you. Honestly. The discovery call exists precisely for this — I'll give you my honest read on whether I think I can genuinely help, and if I can't, I'll tell you that too and point you toward someone who can." },
-          { q:"Do sessions happen in person or online?", a:"Sessions are via video call or phone call — whichever works for you." },
+          { q:"Do sessions happen in person or online?", a:"Sessions can be in person, via video call, or phone call — whichever works best for you." },
         ].map(faq => (
           <details style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;cursor:pointer;">
             <summary style="font-weight:700;font-size:1rem;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;">
