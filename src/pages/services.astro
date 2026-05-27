@@ -23,12 +23,12 @@ import { site, services } from '../data/site';
       </div>
       <div style="max-width:900px;margin:3rem auto 0;display:grid;gap:32px;">
         {services.map(s => (
-          <div class={`service-card fade-up${s.featured ? ' featured' : ''}`} style="flex-direction:row;align-items:flex-start;gap:40px;padding:48px;">
-            <div style="flex-shrink:0;text-align:center;min-width:140px;">
+          <div class={`service-card service-card-horiz fade-up${s.featured ? ' featured' : ''}`}>
+            <div class="service-icon-col">
               <div style="font-size:3rem;margin-bottom:12px;">{s.icon}</div>
               {s.tagline && <span class="service-badge" style={s.tagColor === 'green' ? 'background:var(--green)' : ''}>{s.tagline}</span>}
             </div>
-            <div style="flex:1;">
+            <div style="flex:1;min-width:0;">
               <h3 style="font-size:1.8rem;margin-bottom:.75rem;">{s.title}</h3>
               <p style="margin-bottom:1.5rem;">{s.desc}</p>
               <ul class="service-features" style="margin-bottom:2rem;">

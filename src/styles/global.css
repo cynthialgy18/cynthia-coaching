@@ -1163,6 +1163,38 @@ textarea { resize: vertical; min-height: 120px; }
 .fade-up:nth-child(4) { transition-delay: .3s; }
 
 /* ============================================================
+   SERVICES PAGE — HORIZONTAL CARD LAYOUT
+   ============================================================ */
+.service-card-horiz {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 48px;
+}
+.service-icon-col {
+  flex-shrink: 0;
+  text-align: center;
+  min-width: 140px;
+}
+
+@media (max-width: 768px) {
+  .service-card-horiz {
+    flex-direction: column;
+    gap: 20px;
+    padding: 28px 24px;
+  }
+  .service-icon-col {
+    min-width: unset;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+  }
+  .service-icon-col .service-badge { margin: 0; }
+  .service-card-horiz .btn { width: 100%; justify-content: center; }
+}
+
+/* ============================================================
    MOBILE NAV DRAWER
    ============================================================ */
 @media (max-width: 768px) {
