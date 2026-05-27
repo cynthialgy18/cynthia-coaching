@@ -29,7 +29,7 @@ import { site, services } from '../data/site';
               {s.tagline && <span class="service-badge" style={s.tagColor === 'green' ? 'background:var(--green)' : ''}>{s.tagline}</span>}
             </div>
             <div style="flex:1;min-width:0;">
-              <h3 style="font-size:1.8rem;margin-bottom:.75rem;">{s.title}</h3>
+              <h3 style="font-size:clamp(1.35rem, 2.5vw, 1.8rem);margin-bottom:.75rem;">{s.title}</h3>
               <p style="margin-bottom:1.5rem;">{s.desc}</p>
               <ul class="service-features" style="margin-bottom:2rem;">
                 {s.features.map(f => <li>{f}</li>)}
