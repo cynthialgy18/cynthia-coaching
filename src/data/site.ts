@@ -40,7 +40,7 @@ export const services = [
       "1-on-1 mentor coaching sessions",
       "Recorded session review and detailed feedback",
       "ICF-aligned coaching competencies",
-      "For coaches working toward ACC, PCC, or MCC",
+      "For coaches working toward their ACC credential",
     ],
     price:    "",
     unit:     "",
