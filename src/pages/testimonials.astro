@@ -30,34 +30,6 @@ const mentorClients   = testimonials.filter(t => t.type === 'mentor');
     </div>
   </div>
 
-  <!-- ROTATING FEATURED — one per week across ALL testimonials, Monday = week start -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header center fade-up" style="margin-bottom:2rem;">
-        <p class="section-label">What Clients Say</p>
-      </div>
-      <div id="featuredPool">
-        {testimonials.map((t, i) => (
-          <div
-            data-fi={i}
-            style="display:none;background:linear-gradient(135deg,#FDF8F3,#F2E9DF);border:1px solid var(--border);border-radius:var(--radius);padding:56px;max-width:860px;margin:0 auto;text-align:center;"
-            class="fade-up"
-          >
-            <div style="font-size:3.5rem;color:var(--accent);line-height:.8;margin-bottom:1rem;">"</div>
-            <p style="font-family:'Playfair Display',serif;font-size:1.25rem;line-height:1.8;color:var(--text);font-style:italic;margin-bottom:2rem;">{t.quote}</p>
-            <div style="display:flex;align-items:center;justify-content:center;gap:14px;">
-              <div class="testimonial-avatar" style="width:56px;height:56px;font-size:1.3rem;">{t.avatar}</div>
-              <div style="text-align:left;">
-                <strong style="display:block;font-size:1rem;">{t.name}</strong>
-                <span style="font-size:.875rem;color:var(--text-light);">{t.role}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- 1-ON-1 COACHING CLIENTS -->
   <section class="section-sm bg-card">
     <div class="container">
@@ -123,15 +95,3 @@ const mentorClients   = testimonials.filter(t => t.type === 'mentor');
 
 </Layout>
 
-<script>
-  // Rotate featured testimonial weekly — Monday = first day of week
-  // Unix epoch was a Thursday; first Monday after epoch = Jan 5, 1970 = +4 days
-  const MONDAY_EPOCH_OFFSET = 4 * 24 * 60 * 60 * 1000;
-  const MS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
-  const cards = document.querySelectorAll<HTMLElement>('#featuredPool [data-fi]');
-  if (cards.length) {
-    const week = Math.floor((Date.now() - MONDAY_EPOCH_OFFSET) / MS_PER_WEEK);
-    const idx  = ((week % cards.length) + cards.length) % cards.length;
-    cards[idx].style.display = 'block';
-  }
-</script>

@@ -1269,8 +1269,6 @@ textarea { resize: vertical; min-height: 120px; }
   .section { padding: 64px 0; }
   .trust-bar-inner { gap: 32px; }
   .trust-divider { display: none; }
-  /* Testimonial featured card — reduce padding on small screens */
-  #featuredPool > div { padding: 32px 24px !important; }
   .footer-top { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .hero-btns { flex-direction: column; }
