@@ -3,7 +3,7 @@
 export const site = {
   name:        "Cynthia",
   tagline:     "The World Within",
-  description: "Feeling stuck or unsure what's next? Cynthia helps you cut through the noise, reconnect to what truly matters, and make meaningful change — in how you see yourself, the relationships that count, and what's core to who you are.",
+  description: "Feeling stuck or unsure what is next? Cynthia helps you cut through the noise, reconnect to what truly matters, and make meaningful change — in how you see yourself, the relationships that count, and what is core to who you are.",
   email:       "cynthialgy18@gmail.com",
   linkedin:    "https://www.linkedin.com/in/cynthialgy/",
   rate:        "$350",
